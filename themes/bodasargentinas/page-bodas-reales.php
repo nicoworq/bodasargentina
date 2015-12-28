@@ -30,7 +30,7 @@ $bodas_reales = new WP_Query($args);
                     <div class='boda-table'>
                         <div class='col-md-9'>
                             <div class='boda-contenido'>
-                                <?php the_content(); ?>
+                                <?php the_excerpt(); ?>
                             </div>
                         </div>
                         <div class='col-md-3'>

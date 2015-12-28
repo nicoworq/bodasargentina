@@ -146,7 +146,9 @@ body{
 .home-slides li{
     position: relative;
 }
-
+.home-slides img{
+    width: 100%;
+}
 .over-slider-home{    
     position: absolute;
     top: 0;
@@ -951,7 +953,7 @@ footer{
     width: 100%;
     border: 2px solid #cacaca;
     padding: 9px 24px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 #form-registro input[type=submit]{
     width: 100%;
@@ -1325,6 +1327,20 @@ input[name=sex]{
     margin-top: 20px;
     padding: 15px;
 }
+#volver-presupuesto{
+    /* width: 100%; */
+    background-color: #73bad5;
+    color: #FFF;
+    border-radius: 2px;
+    font-size: 18px;
+    font-family: Montserrat;
+    text-shadow: none;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 20px;
+    padding: 15px;
+    display: inline-block;
+}
 
 .detalle-presupuesto h2{
     font-family: 'montserrat';
@@ -1383,6 +1399,7 @@ input[name=sex]{
 
 .boda-real{
     font-family: montserrat;
+    margin-bottom: 80px;
 }
 .boda-real h3{
     font-weight: 300;
@@ -1512,7 +1529,7 @@ input[name=sex]{
 }
 
 #contenedor-galerias{
-    
+    margin-top: 25px;
 }
 #sidebar-galerias h3{
     color: #ce7d80;
@@ -1612,3 +1629,28 @@ input[name=sex]{
  * ----------- */
 
 #empresas-amigas{}
+
+
+
+/* -----------
+ *  MEDIOS DE PAGO
+ * ----------- */
+
+#medios-pago{
+    padding-bottom: 100px;
+}
+
+
+.medio-pago {
+    font-family: 'montserratlight';
+    text-align: center;
+    margin-top: 60px;
+    color: #4f595b;
+}
+
+.medio-pago h2{
+    font-size: 24px;
+}
+.medio-pago h5{
+    font-size: 16px;
+}

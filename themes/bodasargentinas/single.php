@@ -16,7 +16,6 @@ while (have_posts()) : the_post();
 
 
     if (in_category('prem')) {
-
         get_template_part('template-parts/content', 'single-fotografo-prem');
     }
     
@@ -27,10 +26,7 @@ while (have_posts()) : the_post();
     }
     if ($postType === 'bodas-reales') {
         get_template_part('template-parts/content', 'single-bodas-reales');
-    }
-    if ($postType === 'bodas-reales') {
-        get_template_part('template-parts/content', 'single-bodas-reales');
-    }
+    }  
     if ($postType === 'galerias') {
         get_template_part('template-parts/content', 'single-galerias');
     }

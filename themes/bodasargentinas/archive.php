@@ -7,9 +7,6 @@
  * @package BodasArgentinas
  */
 get_header();
-
-
-var_dump($wp_query->query,get_queried_object()); die;
 ?>
 
 
@@ -30,9 +27,10 @@ var_dump($wp_query->query,get_queried_object()); die;
 
                     <?php
                     $args = array(
-                        'posts_per_page' => 10,
+                        'posts_per_page' => -1,
                         'post_type' => 'fotografos',
                         'cat' => get_queried_object_id(),
+                        'order' => 'rand',
                         'tax_query' => array(
                             array('taxonomy' => 'usuario', 'field' => 'slug', 'terms' => array('Prem'))
                         )
@@ -52,11 +50,13 @@ var_dump($wp_query->query,get_queried_object()); die;
                     ?>
 
 
+                    <!--
 
-
-                    <a href="" class="ver-todos-profesionales">
-                        VER TODOS LOS FOTOGRAFOS PREMIUM
-                    </a>
+                <a href="" class="ver-todos-profesionales">
+                    VER TODOS LOS FOTOGRAFOS PREMIUM
+                </a>
+                    
+                    -->
 
                 </div>
             </div>
@@ -67,12 +67,12 @@ var_dump($wp_query->query,get_queried_object()); die;
                         Directorio Standard
                     </h3>
 
-
                     <?php
                     $args2 = array(
-                        'posts_per_page' => 10,
+                        'posts_per_page' => -1,
                         'post_type' => 'fotografos',
                         'cat' => get_queried_object_id(),
+                        'orderby' => 'rand',
                         'tax_query' => array(
                             array('taxonomy' => 'usuario', 'field' => 'slug', 'terms' => array('Gral'))
                         )

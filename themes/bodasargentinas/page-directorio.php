@@ -22,8 +22,9 @@ get_header();
 
                     <?php
                     $args = array(
-                        'posts_per_page' => 10,
+                        'posts_per_page' => -1,
                         'post_type' => 'fotografos',
+                        'orderby' => 'rand',
                         'tax_query' => array(
                             array('taxonomy' => 'usuario', 'field' => 'slug', 'terms' => array('Prem'))
                         )
@@ -44,45 +45,14 @@ get_header();
 
 
                     <!--
-                <div class="fila-profesionales">
-                    <
-                    <div class="profesional">
-                        <div class="profesional-img">
-                            <img src="<?php echo get_template_directory_uri() ?>/img/profesional2.png" />
-                        </div>
-                        <div class="profesional-contenido">
-                            <h4 class="profesional-nombre">VERO MARTORELL</h4>
-                            <p class="profesional-ubicacion">CÓRDOBA | MORRISON</p>
-                            <div class="profesional-telefonos">
-                                <p>+54 (03537) 480416</p> 
-                                <p>+54 (03537) 15447645</p> 
-                            </div>
-                            <div class="profesional-web">
-                                <a href="">info@veromartorell.com</a>
-                                <a href="">www.veromartorellblog.com</a>                             
-                            </div>
-                            <div class="profesional-redes">
-                                <a href="">
-                                    <img src="<?php echo get_template_directory_uri() ?>/img/pinterest.png"/>
-                                </a>
-                                <a href="">
-                                    <img src="<?php echo get_template_directory_uri() ?>/img/twitter.png"/>
-                                </a>
-                                <a href="">
-                                    <img src="<?php echo get_template_directory_uri() ?>/img/facebook.png"/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-        
-                </div>
+                
                      
-        
-                    -->
-
-                    <a href="" class="ver-todos-profesionales">
+         <a href="" class="ver-todos-profesionales">
                         VER TODOS LOS FOTOGRAFOS PREMIUM
                     </a>
+                    -->
+
+
 
                 </div>
             </div>
@@ -96,8 +66,9 @@ get_header();
 
                     <?php
                     $args = array(
-                        'posts_per_page' => 10,
+                        'posts_per_page' => -1,
                         'post_type' => 'fotografos',
+                        'orderby' => 'rand',
                         'tax_query' => array(
                             array('taxonomy' => 'usuario', 'field' => 'slug', 'terms' => array('Gral'))
                         )
@@ -124,27 +95,12 @@ get_header();
 
                     <!--
         
-                <div class="profesional-standard">
-                    <h4 class="profesional-standard-nombre">
-                        Nicolás De Francesco
-                    </h4>
-                    <div class="profesional-standard-ubicacion">
-                        Buenos Aires
-                    </div>
-                    <div class="profesional-standard-telefono">
-                        +54 9 11 59208023
-                    </div>
-                    <div class="profesional-standard-email">
-                        contacto@patriciogarciafotografo.com
-                    </div>
-                    <div class="profesional-standard-separador"></div>
-        
-                </div>
-                    -->
-
-                    <a href="" class="ver-todos-profesionales">
+             <a href="" class="ver-todos-profesionales">
                         VER TODOS LOS STANDARD
                     </a>
+                    -->
+
+
                 </div>
             </div>
 

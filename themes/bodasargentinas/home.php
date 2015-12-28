@@ -4,13 +4,66 @@
  */
 
 get_header();
+
+$args = array(
+    'posts_per_page' => 10,
+    'post_type' => 'slide_home',
+);
+
+$slides_home = new WP_Query($args);
 ?>
+
+
 
 <section id="home-slider">
 
 
     <div class="home-slides">
         <ul class="slides">
+
+            <?php
+            if ($slides_home->have_posts()) : while ($slides_home->have_posts()) : $slides_home->the_post();
+
+                    $fotografo = get_field('fotografo', get_the_ID());
+
+                    $imagen = get_field('imagen', get_the_ID());                   
+                   
+                    
+                    $localidad = get_the_author_meta('localidad', $fotografo->post_author);
+                    $nombre = get_the_author_meta('first_name', $fotografo->post_author);
+                    $apellido = get_the_author_meta('last_name', $fotografo->post_author);
+                    ?>
+                    <li>
+                        <div class="over-slider-home">
+                            <div class="over-slide-home-contenido">
+                                <h4 class="categoria-audiovisual">Fotografía</h4>
+                                <h5 class="user-audiovisual"><?php echo $nombre.' '.$apellido ?>, <?php echo $localidad ?></h5>
+                                <a href="<?php echo get_permalink($fotografo); ?>">VER SU PERFIL</a>
+                            </div>
+
+                        </div>
+                        <img src="<?php echo str_replace('http://bodas.worq.com.ar/', '', $imagen['url']) ;?> " alt="Slide"/>
+                    </li>
+
+
+                    <?php
+                endwhile;
+            else :
+                ?>
+
+
+                No hay Slides cargados
+
+
+
+            <?php
+            endif;
+            wp_reset_query();
+            ?>
+
+
+                <!--
+
             <li>
                 <div class="over-slider-home">
                     <div class="over-slide-home-contenido">
@@ -43,7 +96,7 @@ get_header();
 
                 </div>
                 <img src="<?php echo get_template_directory_uri() ?>/img/home-slide3.jpg" />
-            </li>
+            </li>-->
 
         </ul>
     </div>

@@ -36,7 +36,7 @@ $galerias = new WP_Query($args);
                         $portada = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium');
                         ?>
                         <div class='col-md-6 contenedor-galeria'>
-                            <a class='galeria' href="<?php the_permalink(); ?>" style="background-image: url(<?php echo $portada[0] ?>);">
+                            <a class='galeria' href="<?php the_permalink(); ?>" style="background-image: url(<?php echo  str_replace('http://bodas.worq.com.ar/', '',  $portada[0]) ?>);">
                                 <div class='galeria-over'></div>
                                 <div class='galeria-texto'>
                                     <h3><?php the_title(); ?></h3>

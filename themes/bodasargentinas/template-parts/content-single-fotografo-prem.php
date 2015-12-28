@@ -135,10 +135,3 @@
     </div>
 </article><!-- #post-## -->
 
-<div class="encuentre-provincia">
-    <h4>Encuentre el fotógrafo ideal para su boda seleccionando la provincia donde se realizara el gran evento</h4>
-    
-    <select class="provincias-fotografo">
-        <option></option>
-    </select>
-</div>

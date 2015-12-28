@@ -37,7 +37,7 @@ $categoriasGaleria = get_terms($taxonomies, $args);
             ?>
 
             <div class=' col-md-3 contenedor-categoria-galeria'>
-                <a href="<?php echo get_term_link($cat->term_id,'categoria-galerias')?>" class='categoria-galeria' style="background-image: url(<?php echo $imgCategoria['sizes']['medium'] ?>);">
+                <a href="<?php echo get_term_link($cat->term_id,'categoria-galerias')?>" class='categoria-galeria' style="background-image: url(<?php echo str_replace('http://bodas.worq.com.ar/', '', $imgCategoria['sizes']['medium']); ?>);">
                     <h3><?php echo $cat->name ?></h3>
                 </a>
 

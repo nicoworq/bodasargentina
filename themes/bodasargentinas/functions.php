@@ -378,7 +378,7 @@ function custom_post_type_bodas_reales() {
         'label' => __('Boda Real', 'text_domain'),
         'description' => __('Bodas Reales', 'text_domain'),
         'labels' => $labels,
-        'supports' => array('title', 'editor', 'thumbnail'),
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
         'hierarchical' => false,
         'public' => true,
         'taxonomies' => array('category', 'post_tag'),
@@ -398,6 +398,60 @@ function custom_post_type_bodas_reales() {
 }
 
 add_action('init', 'custom_post_type_bodas_reales', 0);
+
+// Register Custom Post Type
+function custom_post_slide_home() {
+
+    $labels = array(
+        'name' => _x('Slides Home', 'Post Type General Name', 'text_domain'),
+        'singular_name' => _x('Slide Home', 'Post Type Singular Name', 'text_domain'),
+        'menu_name' => __('Slides Home', 'text_domain'),
+        'name_admin_bar' => __('Slides Home', 'text_domain'),
+        'archives' => __('Item Archives', 'text_domain'),
+        'parent_item_colon' => __('Parent Item:', 'text_domain'),
+        'all_items' => __('Todos', 'text_domain'),
+        'add_new_item' => __('Agregar Nuevo Slide', 'text_domain'),
+        'add_new' => __('Agregar Nuevo', 'text_domain'),
+        'new_item' => __('Nuevo Slide', 'text_domain'),
+        'edit_item' => __('Editar Slide', 'text_domain'),
+        'update_item' => __('Actualizar Slide', 'text_domain'),
+        'view_item' => __('Ver Slide', 'text_domain'),
+        'search_items' => __('Buscar Slide', 'text_domain'),
+        'not_found' => __('No encontrado', 'text_domain'),
+        'not_found_in_trash' => __('No encontrado en Papelera', 'text_domain'),
+        'featured_image' => __('Imagen Destacada', 'text_domain'),
+        'set_featured_image' => __('Ver Imagen Destacada', 'text_domain'),
+        'remove_featured_image' => __('Remover Imagen Destacada', 'text_domain'),
+        'use_featured_image' => __('Usar como imagen destacada', 'text_domain'),
+        'insert_into_item' => __('Insert into item', 'text_domain'),
+        'uploaded_to_this_item' => __('Uploaded to this item', 'text_domain'),
+        'items_list' => __('Items list', 'text_domain'),
+        'items_list_navigation' => __('Items list navigation', 'text_domain'),
+        'filter_items_list' => __('Filter items list', 'text_domain'),
+    );
+    $args = array(
+        'label' => __('Slide Home', 'text_domain'),
+        'description' => __('Slides de la Home', 'text_domain'),
+        'labels' => $labels,
+        'supports' => array(),
+        'hierarchical' => false,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-images-alt2',
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => true,
+        'publicly_queryable' => true,
+        'capability_type' => 'page',
+    );
+    register_post_type('slide_home', $args);
+}
+
+add_action('init', 'custom_post_slide_home', 0);
 
 
 /*

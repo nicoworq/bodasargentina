@@ -9,7 +9,7 @@ get_header()
 <section id="pedir-presupuesto">
     <div class="header-listado">
         <div class="header-listado-contenido container">
-            
+
             <div class="header-listado-titulos col-md-12">
                 <h3>Novios</h3>
                 <h2>PRESUPUESTO DE FOTOGRAFOS</h2>
@@ -56,20 +56,30 @@ get_header()
 
     </form>
 
-    <div class="listado-presupuestos">
+    <div class="listado-presupuestos listado-presupuestos-activos">
 
         <?php
+        $today = date('Ymd');
+
         $args = array(
             'posts_per_page' => -1,
             'post_type' => 'presupuesto',
+            'meta_query' => array(
+                array(
+                    'key' => 'fecha_evento',
+                    'compare' => '>=',
+                    'value' => $today,
+                )
+            ),
         );
 
-        $presupuestos = new WP_Query($args);
+
+        $presupuestosActivos = new WP_Query($args);
         ?>
 
         <div class="container">
             <div class="col-md-12">
-                <h3>Presupuestos Activos  | <?php echo $presupuestos->post_count ?></h3>
+                <h3>Presupuestos Activos  | <?php echo $presupuestosActivos->post_count ?></h3>
 
                 <table>
                     <thead>
@@ -84,9 +94,7 @@ get_header()
                     <tbody>
 
                         <?php
-                        if ($presupuestos->have_posts()) : while ($presupuestos->have_posts()) : $presupuestos->the_post();
-
-
+                        if ($presupuestosActivos->have_posts()) : while ($presupuestosActivos->have_posts()) : $presupuestosActivos->the_post();
 
                                 $fotografos = get_field('fotografos_aplicaron');
 
@@ -135,6 +143,112 @@ get_header()
                             <tr>
                                 <td colspan="5">
                                     No hay presupuestos activos    
+                                </td>
+                            </tr>
+
+                        <?php
+                        endif;
+                        wp_reset_query();
+                        ?>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="listado-presupuestos listado-presupuestos-inactivos">
+
+        <?php
+        $today = date('Ymd');
+
+        $args = array(
+            'posts_per_page' => -1,
+            'post_type' => 'presupuesto',
+            'meta_query' => array(
+                array(
+                    'key' => 'fecha_evento',
+                    'compare' => '<',
+                    'value' => $today,
+                )
+            ),
+        );
+
+
+        $presupuestosInactivos = new WP_Query($args);
+        ?>
+
+        <div class="container">
+            <div class="col-md-12">
+                <h3>Presupuestos Inactivos  | <?php echo $presupuestosInactivos->post_count ?></h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Número</td>
+                            <td>Nombre</td>
+                            <td>Fecha</td>
+                            <td>Ubicación</td>
+                            <td>Respuestas</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <?php
+                        if ($presupuestosInactivos->have_posts()) : while ($presupuestosInactivos->have_posts()) : $presupuestosInactivos->the_post();
+
+                                $fotografos = get_field('fotografos_aplicaron');
+
+                                $respuestas = 0;
+                                if ($fotografos) {
+                                    $respuestas = count($fotografos);
+                                }
+                                ?>
+
+                                <tr>
+                                    <td>
+                                        <a href="<?php the_permalink() ?>">
+                                            <?php the_ID() ?>
+                                        </a>
+
+                                    </td>
+                                    <td>
+                                        <a href="<?php the_permalink() ?>">
+                                            <?php the_field('nombre') ?>
+                                        </a>
+
+                                    </td>
+                                    <td>
+                                        <a href="<?php the_permalink() ?>">
+                                            <?php the_field('fecha_evento') ?>
+                                        </a>
+
+                                    </td>
+                                    <td>
+                                        <a href="<?php the_permalink() ?>">
+                                            <?php the_field('ubicacion') ?>
+                                        </a>
+
+                                    </td>
+                                    <td>
+                                        <a href="<?php the_permalink() ?>">
+                                            <?php echo $respuestas; ?>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                <?php
+                            endwhile;
+                        else :
+                            ?>
+                            <tr>
+                                <td colspan="5">
+                                    No hay presupuestos inactivos    
                                 </td>
                             </tr>
 
