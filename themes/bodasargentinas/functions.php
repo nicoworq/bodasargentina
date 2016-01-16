@@ -290,6 +290,49 @@ function custom_taxonomy_galerias() {
 
 add_action('init', 'custom_taxonomy_galerias', 0);
 
+
+
+
+// Register Custom Taxonomy
+function premios_galeria() {
+
+	$labels = array(
+		'name'                       => _x( 'Premios Galerias', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Premio Galerias', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Premios Galerias', 'text_domain' ),
+		'all_items'                  => __( 'Todos', 'text_domain' ),
+		'parent_item'                => __( 'Parent Item', 'text_domain' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
+		'new_item_name'              => __( 'Nuevo Premio', 'text_domain' ),
+		'add_new_item'               => __( 'Agregar nuevo Premio', 'text_domain' ),
+		'edit_item'                  => __( 'Editar Premio', 'text_domain' ),
+		'update_item'                => __( 'Actualizar Premio', 'text_domain' ),
+		'view_item'                  => __( 'Ver Premio', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Agregar o Remover Premios', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Elegir los mas usados', 'text_domain' ),
+		'popular_items'              => __( 'Premios Populares', 'text_domain' ),
+		'search_items'               => __( 'Buscar Premios', 'text_domain' ),
+		'not_found'                  => __( 'No encontrado', 'text_domain' ),
+		'no_terms'                   => __( 'No Premios', 'text_domain' ),
+		'items_list'                 => __( 'Items list', 'text_domain' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'premio-galerias', array( 'galerias' ), $args );
+
+}
+add_action( 'init', 'premios_galeria', 0 );
+
+
 function taxonomia_user() {
     register_taxonomy('usuario', 'fotografos', array(
         'hierarchical' => true, 'label' => 'Tipo de usuario',
@@ -453,6 +496,61 @@ function custom_post_slide_home() {
 
 add_action('init', 'custom_post_slide_home', 0);
 
+
+
+// Register Custom Post Type
+function custom_post_type_concursos() {
+
+	$labels = array(
+		'name'                  => _x( 'Concursos', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Concurso', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Concursos', 'text_domain' ),
+		'name_admin_bar'        => __( 'Concursos', 'text_domain' ),
+		'archives'              => __( 'Archivo Concurso', 'text_domain' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
+		'all_items'             => __( 'Todos los Concursos', 'text_domain' ),
+		'add_new_item'          => __( 'Agregar nuevo Concurso', 'text_domain' ),
+		'add_new'               => __( 'Agregar nuevo', 'text_domain' ),
+		'new_item'              => __( 'Nuevo Concurso', 'text_domain' ),
+		'edit_item'             => __( 'Editar Concurso', 'text_domain' ),
+		'update_item'           => __( 'Actualizar Concurso', 'text_domain' ),
+		'view_item'             => __( 'Ver Concurso', 'text_domain' ),
+		'search_items'          => __( 'Buscar Concurso', 'text_domain' ),
+		'not_found'             => __( 'Concurso no encontrado', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Concurso no encontrado en papelera', 'text_domain' ),
+		'featured_image'        => __( 'Imagen Destacada', 'text_domain' ),
+		'set_featured_image'    => __( 'Setear Imagen Destacada', 'text_domain' ),
+		'remove_featured_image' => __( 'Eliminar Imagen Destacada', 'text_domain' ),
+		'use_featured_image'    => __( 'Usar como Imagen Destacada', 'text_domain' ),
+		'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
+		'items_list'            => __( 'Items list', 'text_domain' ),
+		'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+	);
+	$args = array(
+		'label'                 => __( 'Concurso', 'text_domain' ),
+		'description'           => __( 'Concursos ', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-awards',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => false,		
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'concursos', $args );
+
+}
+add_action( 'init', 'custom_post_type_concursos', 0 );
 
 /*
  * ROLES

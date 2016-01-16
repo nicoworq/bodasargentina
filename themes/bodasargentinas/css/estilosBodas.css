@@ -1511,6 +1511,7 @@ input[name=sex]{
  * LISTADO DE GALERIAS
  * ----------- */
 
+
 .header-small{
     background: #ebe9e9;
     padding: 20px 0;
@@ -1527,7 +1528,7 @@ input[name=sex]{
     color: #8f908b;
 
 }
-
+.header-small.no-bottom{margin-bottom: 0;}
 #contenedor-galerias{
     margin-top: 25px;
 }
@@ -1563,7 +1564,7 @@ input[name=sex]{
 }
 
 #navegacion-categoria-galeria li a:before{
-    content: '»';
+    content: '\00BB';
     display: none;
 }
 
@@ -1654,3 +1655,55 @@ input[name=sex]{
 .medio-pago h5{
     font-size: 16px;
 }
+
+/* -----------
+ *  CONCURSOS
+ * ----------- */
+
+#concursos{
+    font-family: 'montserratregular';
+    color: #4f595b;
+    background: white;
+}
+.concurso-intro{
+    margin-top: 20px;
+}
+#concurso-activo{
+   /* margin: 60px 0; */
+   margin-top: 39px;
+   padding: 1px 0;
+}
+
+.concurso-activo-intro{
+    background-image: url(../img/concurso-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-color: #f4f4f4;
+    padding: 90px 0;
+}
+#concurso-activo .concurso-datos{}
+#concurso-activo .concurso-datos h3{
+    font-weight: 400;
+    margin: 5px 0;
+}
+#concurso-activo .concurso-fechas{
+    margin-top: 20px;
+}
+#concurso-activo .concurso-participar{
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 21px 141px;
+    border-radius: 4px;
+    color: #FFF;
+    margin-top: 10px;
+    background: #9ba657;
+    text-transform: uppercase;
+}
+.concurso-activo-contenido{
+    font-weight: 400;
+    margin: 60px 0;
+}
+
+.same-height{display: table-cell;float: none !important;vertical-align: middle;}

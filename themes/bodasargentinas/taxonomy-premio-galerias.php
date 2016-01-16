@@ -5,7 +5,7 @@ $args = array(
     'post_type' => 'galerias',
     'tax_query' => array(
         array(
-            'taxonomy' => 'categoria-galerias',
+            'taxonomy' => 'premio-galerias',
             'field' => 'slug',
             'terms' => $taxonomiaActual->slug,
         ),
@@ -16,7 +16,7 @@ $galerias = new WP_Query($args);
 <div class='header-small'>
     <div class='container'>
         <div class='col-md-4'>
-            <div class='breadcrum-galeria'>Novios / <span>Galerías</span></div>
+            <div class='breadcrum-galeria'>Premios / <span>Galerías</span></div>
         </div>
     </div>
 </div>
@@ -24,7 +24,7 @@ $galerias = new WP_Query($args);
 <div class='listado-galerias-categoria'>
     <div class='container'>
         <div class='col-md-3'>            
-            <?php get_template_part('template-parts/content', 'sidebar-galerias'); ?>
+            <?php get_template_part('template-parts/content', 'sidebar-galerias-premios'); ?>
         </div>
         <div class='col-md-9'>
 
@@ -35,15 +35,13 @@ $galerias = new WP_Query($args);
                         $galerias->the_post();
                         $portada = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium');
                         
-                        $premios = wp_get_post_terms(get_the_ID(),'premio-galerias');
                        
                         ?>
                         <div class='col-md-6 contenedor-galeria'>
-                            <a class='galeria' href="<?php the_permalink(); ?>" style="background-image: url(<?php echo  str_replace('http://bodas.worq.com.ar/', '',  $portada[0]) ?>);">
+                            <a class='galeria' href="<?php echo get_permalink().'?premio'; ?>" style="background-image: url(<?php echo  str_replace('http://bodas.worq.com.ar/', '',  $portada[0]) ?>);">
                                 <div class='galeria-over'></div>
                                 <div class='galeria-texto'>
-                                    <h3><?php the_title(); ?></h3>
-                                    <h4><?php echo $premios[0]->name; ?></h4>
+                                    <h3><?php the_title(); ?></h3>                                    
                                 </div>
                             </a>
                         </div>
@@ -52,7 +50,7 @@ $galerias = new WP_Query($args);
                 } else {
                     ?>
 
-                    <h1>No se han encontrado Galerias. Intenta con otra Categoria</h1>
+                    <h1>No se han encontrado Galerias. Intenta con otro Premio</h1>
                     <?php
                 }
 

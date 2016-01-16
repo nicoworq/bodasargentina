@@ -30,6 +30,9 @@ while (have_posts()) : the_post();
     if ($postType === 'galerias') {
         get_template_part('template-parts/content', 'single-galerias');
     }
+    if ($postType === 'concursos') {
+        get_template_part('template-parts/content', 'single-concursos');
+    }
     ?>
 
 
