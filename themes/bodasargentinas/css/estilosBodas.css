@@ -1669,9 +1669,9 @@ input[name=sex]{
     margin-top: 20px;
 }
 #concurso-activo{
-   /* margin: 60px 0; */
-   margin-top: 39px;
-   padding: 1px 0;
+    /* margin: 60px 0; */
+    margin-top: 39px;
+    padding: 1px 0;
 }
 
 .concurso-activo-intro{
@@ -1707,3 +1707,70 @@ input[name=sex]{
 }
 
 .same-height{display: table-cell;float: none !important;vertical-align: middle;}
+
+
+/* -----------
+ *  CONCURSO SINGLE
+ * ----------- */
+
+.concurso-single{
+    background: white;
+}
+
+.intro-concurso{
+    font-family: 'montserratregular';
+    color: #8f908b;
+    font-family: 16px;
+    padding: 20px;
+}
+
+.concurso-seleccion-fotos{
+    background: #f4f4f4;
+    font-family: 'montserratregular';
+}
+.concurso-seleccion-fotos h3{
+    text-transform: uppercase;
+    color: #616c71;
+    font-size: 24px;
+    font-weight: 400;
+}
+.concurso-seleccion-fotos h4{
+    color: #8f908b;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.concurso-imagen{
+    margin: 20px 0;
+}
+
+.concurso-seleccion-fotos .concurso-imagen h4{
+    text-transform: uppercase;
+    color: #8f908b;
+    margin: 0;
+}
+
+.concurso-file{
+    float: left;
+}
+.concurso-file label{
+    cursor: pointer;
+    color: #8f908b;
+    background: white;
+    border: 2px solid #cacaca;
+    border-radius: 3px;
+    padding: 13px 20px;
+    display: inline-block;
+
+
+}
+.concurso-file input{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.concurso-imagen-categoria{}
