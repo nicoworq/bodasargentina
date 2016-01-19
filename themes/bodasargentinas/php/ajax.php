@@ -205,3 +205,50 @@ function desaplicar_presupuesto() {
 
     die();
 }
+
+/*
+ * NEWSLETTER
+ */
+
+
+//suscribir news
+add_action('wp_ajax_nopriv_suscribir', 'suscribir_email');
+add_action('wp_ajax_suscribir', 'suscribir_email');
+
+function suscribir_email() {
+
+    header('Content-type: application/json');
+
+    if (isset($_POST['sex']) && $_POST['sex'] !== '') {
+        echo json_encode(array('enviado' => TRUE, 'trucho' => TRUE));
+        die();
+    }
+
+    //descarto por CSRF
+    if (!check_ajax_referer('suscribir-news', 'news-code', false)) {
+        echo json_encode(array('enviado' => TRUE, 'trucho' => TRUE, 'csrf' => TRUE));
+        die();
+    }
+
+
+
+    $email = $_POST['email'];
+    $cuerpo_email = "<h3>Nueva Subscripcion a Newsletter de Bodas</h3>                                    
+                    <p>Email: <b>{$email}</b></p>";
+
+    $asunto = 'Subscripcion Newsletter Bodas';
+
+
+
+
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $enviado = wp_mail('nicolas@worq.com.ar', $asunto, $cuerpo_email, $headers);
+
+
+    if (!$enviado) {
+        echo json_encode(array('enviado' => FALSE, 'error-mailer' => 'ERROR'));
+        exit;
+    }
+    echo json_encode(array('enviado' => TRUE));
+    die(); // Siempre hay que terminar con die
+}

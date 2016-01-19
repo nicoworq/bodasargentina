@@ -32,7 +32,7 @@
 
     </div>
 
-    <div class="container">
+    <div id="<?php echo $post->post_name; ?>" class="container single-page-comun">
         <div class="col-md-12">
              <?php the_content(); ?>
         </div>

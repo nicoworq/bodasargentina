@@ -27,7 +27,7 @@ $concursos = get_posts(array(
         </div>
     </div>
 
-    <?php if ($concursos): ?>
+    <?php if ($concursos){ ?>
 
         <?php
         foreach ($concursos as $post):
@@ -73,9 +73,16 @@ $concursos = get_posts(array(
         <?php endforeach; ?>
         <?php wp_reset_postdata(); ?>
 
-    <?php endif; ?>
+    <?php }else{ ?>
+    
+    <div class="text-center">
+        <h2>No hay concursos activos</h2>
+        <h3>Vuelve a visitarnos nuevamente para participar de nuestros concursos.</h3>
+    </div>
+    
+    <?php }; ?>
 
-
+   
 
 
 

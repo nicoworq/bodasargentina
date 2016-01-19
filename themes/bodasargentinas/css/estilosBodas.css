@@ -57,6 +57,10 @@ body{
     /* padding: 0 30px; */
 }
 
+p{font-family: 'montserratregular';}
+
+.single-page-comun p{/* font-weight: 400 !important; *//* font-weight: 800; */color: #60615B;line-height: 26px;}
+
 .transitionBase{
     transition: all .6s cubic-bezier(0.23,1,0.32,1);
 }
@@ -489,7 +493,7 @@ footer{
     padding: 10px;
     border-radius: 2px;
     margin-top: -17px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 #form-suscribir input[type=text]{
@@ -497,7 +501,9 @@ footer{
     font-weight: 300;
     font-size: 16px;
     font-family: 'montserratlight';
+    border: 1px solid white;
 }
+#form-suscribir .ajaxing{position: absolute;padding: 10px;}
 #form-suscribir button{
     background-color: #9ba657;
     border: none;
@@ -521,6 +527,7 @@ footer{
 
 .titulo-menu-footer-contacto{
     margin-bottom: 11px;
+    margin-top: 37px;
 }
 .redes-sociales {
     margin-top: 14px;
@@ -529,7 +536,7 @@ footer{
     margin-right: 14px;
 }
 
-
+.text-center{text-align: center;}
 
 /*
 ========================
@@ -1701,6 +1708,8 @@ input[name=sex]{
     background: #9ba657;
     text-transform: uppercase;
 }
+
+#concurso-activo .concurso-participar:hover{background: #ADB95F;}
 .concurso-activo-contenido{
     font-weight: 400;
     margin: 60px 0;
@@ -1748,10 +1757,12 @@ input[name=sex]{
     text-transform: uppercase;
     color: #8f908b;
     margin: 0;
+    margin-bottom: 5px;
 }
 
 .concurso-file{
     float: left;
+    width: 40%;
 }
 .concurso-file label{
     cursor: pointer;
@@ -1759,10 +1770,15 @@ input[name=sex]{
     background: white;
     border: 2px solid #cacaca;
     border-radius: 3px;
-    padding: 13px 20px;
+    padding: 13px 13px 13px 20px;
     display: inline-block;
-
-
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .concurso-file input{
     width: 0.1px;
@@ -1771,6 +1787,60 @@ input[name=sex]{
     overflow: hidden;
     position: absolute;
     z-index: -1;
+    /* position: relative; */
+    /* opacity: 1; */
+    /* z-index: 1; */
+    /* height: auto; */
+    /* width: auto; */
 }
 
-.concurso-imagen-categoria{}
+.concurso-imagen-categoria{
+    color: #8f908b;
+    background: #FFF;
+    border: 2px solid #cacaca;
+    border-radius: 3px;
+    padding: 13px 20px;
+    display: inline-block;
+    height: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#enviar-imagenes{
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 21px 141px;
+    border-radius: 4px;
+    color: #FFF;
+    margin-top: 10px;
+    background: #9ba657;
+    text-transform: uppercase;
+    text-shadow: none;
+    box-shadow: none;
+    border: none;
+}
+
+#enviar-imagenes:hover{
+    background: #ADB95F;
+}
+
+
+#ya-participo{
+    font-family: 'montserratregular';
+}
+
+#ya-participo h3{}
+#ya-participo h4{}
+
+.imagen-concurso{
+    margin: 20px 0;
+}
+.imagen-concurso img{
+    max-width: 100%;
+}
+
+.error-message h4{
+    color: #F00;
+}
