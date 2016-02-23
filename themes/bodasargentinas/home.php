@@ -150,7 +150,7 @@ $slides_home = new WP_Query($args);
         <div class="tendencia-contenido">
             <h3>Preparativos<br/> Novios</h3>
             <p>Se retrata a los novios en sus preparativos para la boda, son momentos muy especiales, cada detalle, cada instante está cargado de una emoción única.</p>
-            <a href="">VER GALERÍA</a>
+            <a href="<?php echo get_term_link(79,'categoria-galerias') ?>">VER GALERÍAS</a>
         </div>
     </div>
     <div class="tendencia tendencia-2">
@@ -158,7 +158,7 @@ $slides_home = new WP_Query($args);
             <h3>Una nueva forma<br/> de recordar</h3>
             <p>Se trata de una sesión fotográfica posterior a la boda. Es una sesión relajada, descontracturada,  donde perder el miedo a “que se ensucie” el vestido, la sesión puede planearse en lugares raros, e inéditos.
                 Esto permite tener otro nuevo tipo de recuerdos y sobre todo para divertirse mucho.</p>
-            <a href="">VER GALERÍA</a>
+            <a href="<?php echo get_term_link(82,'categoria-galerias') ?>">VER GALERÍAS</a>
         </div>
         <div class="tendencia-imagenes">
             <h4>Trash<br/>
@@ -183,7 +183,7 @@ $slides_home = new WP_Query($args);
             <h3>sesión de
                 <br/> compromiso</h3>
             <p>Los novios realizan una sesión fotográfica en las que inmortalizan sus últimas días como novios, son fotografías creativas y divertidas para mostrar el día de la fiesta. Se puede utilizar su historia, cómo se conocieron, sus gustos y hobbies. Se busca un clima casual. Eligen un lugar, una vestimenta con estilo propio y accesorios.</p>
-            <a href="">VER GALERÍA</a>
+            <a href="<?php echo get_term_link(78,'categoria-galerias') ?>">VER GALERÍAS</a>
         </div>
     </div>
 

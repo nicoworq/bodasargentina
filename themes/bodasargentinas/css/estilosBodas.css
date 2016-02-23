@@ -579,7 +579,10 @@ footer{
 .header-action-bar{
     float: right;
     margin-top: 20px;
+    display: none;
 }
+
+.header-action-bar.show-action-bar{display: block;}
 
 #form-buscar{
     border-right: 1px solid #cacaca;
@@ -597,15 +600,26 @@ footer{
     border: none;
     background: none;
 }
-
+.campo-requerido{
+    color: #ABA8A8;
+    font-weight: 600;
+    font-family: montserratlight;
+}
 .filtro-ubicacion{
-    float: left;
-    background: none;    border: none;    color: #616c71;    font-weight: 300;    font-family: 'montserratlight';
+    float: right;
+    background: none;
+    border: none;
+    color: #616c71;
+    font-weight: 300;
+    font-family: 'montserratlight';
     margin-top: 6px;
     margin-left: 10px;
     font-size: 14px;
 }
-
+.filtro-ubicacion select{
+    padding: 10px;
+    background: #EBE9E9;
+}
 .listado-contenido{
     /* margin: 0 auto; */
     overflow: hidden;
@@ -947,15 +961,20 @@ footer{
  * ----------- */
 
 .contenido-registro{
-    margin-top: 100px;
+    margin-top: 80px;
     overflow: hidden;
     padding-bottom: 200px;
+    font-family: 'montserratregular';
 }
 
 
-.texto-registro{float: left;padding: 0 60px;width: 100%;}
+.texto-registro{float: left;padding: 0 60px;width: 100%;color: #616c71;line-height: 28px;margin-top: 10px;}
 
 #form-registro{width: 100%;}
+#form-registro p:first-child{}
+#form-registro p{
+    font-weight: 400;
+}
 #form-registro input[type=text],#form-registro input[type=email]{
     width: 100%;
     border: 2px solid #cacaca;
@@ -973,11 +992,12 @@ footer{
     border: none;
     margin-top: 20px;
 }
+#form-registro input[type=submit]:disabled{opacity: 0.7}
 #form-registro select{
     width: 100%;
     border: 2px solid #cacaca;
     padding: 9px 24px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     border-radius: 2px;
 }
 #form-registro select option:first-child{
@@ -987,7 +1007,8 @@ footer{
     width: 100%;
     border: 2px solid #cacaca;
     padding: 9px 24px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    height: 80px;
 }
 
 /* -----------
@@ -995,10 +1016,7 @@ footer{
  * ----------- */
 
 
-.fotografo-header{
-
-    background: #66a1af;
-}
+.fotografo-header{background-color: #66a1af;background-repeat: no-repeat;background-size: cover;}
 .fotografo-datos{
     font-family: 'montserratregular';
     padding: 50px 20px;

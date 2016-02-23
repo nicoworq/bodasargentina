@@ -504,12 +504,18 @@ if (is_admin()) {
     add_action('personal_options', 'prefix_hide_personal_options');
 }
 
+function user_nickname_is_login( $meta, $user, $update ){
+	$meta['nickname'] = $user->user_login;
+	return $meta;
+}
+add_filter( 'insert_user_meta', 'user_nickname_is_login', 10, 3 );
+
 function prefix_hide_personal_options() {
     ?>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
-            $("#your-profile .form-table:first, #your-profile h3:first").remove();
-            $('input#nickname, #display_name').closest('tr').remove();
+         $("#your-profile .form-table:first, #your-profile h3:first").remove();
+            //$('input#nickname, #display_name').closest('tr').remove();
         });
     </script>
     <?php

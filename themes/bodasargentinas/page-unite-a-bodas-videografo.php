@@ -1,18 +1,21 @@
 <?php
 /*
-  Template Name: Template Registro premium
+  Template Name: Template Unite a Bodas
  */
 
 get_header();
 ?>
 
-<section id="registro-premium">
+<section id="unite-bodas">
+
+
     <div class="header-listado">
         <div class="container">
+
             <div class="header-listado-contenido">
                 <div class="header-listado-titulos">
-                    <h3>FOTÓGRAFOS & VIDEÓGRAFOS</h3>
-                    <h2>REGISTRO ESTANDAR</h2>
+                    <h3>VIDEÓGRAFOS</h3>
+                    <h2>UNITE A BODAS</h2>
                 </div>
                 <div class="header-action-bar">
                     <form id="form-buscar">
@@ -23,42 +26,60 @@ get_header();
                     </form>                
                 </div>
             </div>
+
+
         </div>
 
     </div>
+
 
     <div class="container">
+        <div class="unite">
 
 
-
-        <div class="contenido-registro">
-
-
-            <div class="col-md-5">
-                <div id="form-registro">
-
-                    <?php echo do_shortcode('[contact-form-7 id="212" title="Registro Estandar"]'); ?>
-
+            <div class="estandar">
+                <h1 class="unite-header">
+                    estandar
+                </h1>
+                <h3 class="unite-precio">GRATUITO</h3>
+                <div class="unite-beneficios">
+                    <span>Beneficio</span>
+                    <ul>
+                        <li>Nombre</li>
+                        <li>E-mail</li>
+                        <li>Teléfono de contacto</li>
+                    </ul>
                 </div>
+                <a href="<?php echo get_permalink(get_page_by_title('Registro Estandar')); ?>" class="registrate">REGÍSTRATE</a>
             </div>
-            <div class="col-md-7">
-                <div class="texto-registro">
-                    <?php
-                    $page = get_page_by_title('Registro Estandar');
-                    echo $page->post_content;
-                    ?>
+            <div class="premium">
+                <h1 class="unite-header">
+                    premium
+                </h1>
+                <h3 class="unite-precio">$600 anual</h3>
+                <div class="unite-beneficios">
+                    <span>Beneficio</span>
+                    <ul>
+                        <li>PERFIL de usuario</li>
+                        <li>Fotografía o logo</li>
+                        <li>Nombre</li>
+                        <li>E-mail, teléfono, dirección</li>
+                        <li>Descripción de servicios brindados</li>
+                        <li>Galería de fotos</li>
+                        <li>Enlaces a site, blog, fanpage, etc.</li>
+                        <li>Redes sociales</li>
+                        <li><a href="<?php echo get_permalink(get_page_by_title('Beneficios Videografos')) ?>" class="ver-mas-beneficios">+ VER MAS BENEFICIOS</a></li>
+                    </ul>
                 </div>
+                <a href="<?php echo get_permalink(get_page_by_title('Registro Premium')); ?>" class="registrate">OBTÉN TU CUENTA PREMIUM</a>
             </div>
-
-
-
-
         </div>
-
-
     </div>
 
 
+
+
+    <?php get_template_part('template-parts/content', 'hacete-premium'); ?>
 </section>
 
 <?php get_footer(); ?>

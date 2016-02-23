@@ -11,7 +11,7 @@ get_header();
         <div class="container">
             <div class="header-listado-contenido">
                 <div class="header-listado-titulos">
-                    <h3>FOTÓGRAFOS</h3>
+                    <h3>FOTÓGRAFOS & VIDEÓGRAFOS</h3>
                     <h2>REGISTRO PREMIUM</h2>
                 </div>
                 <div class="header-action-bar">

@@ -2,10 +2,16 @@
 /**
  * @package BodasArgentinas
  */
+
+$imageHeader ='';
+
+if (get_the_author_meta('fotografia-01') != '') {
+    $imageHeader = wp_get_attachment_image_src(get_the_author_meta('fotografia-01'), 'large');
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="fotografo-header">
+    <div class="fotografo-header" style="background-image: url(<?php echo $imageHeader[0]; ?>);">
         <div class="fotografo-datos">
             <h1>DIRECTORIO DE FOTÓGRAFOS</h1>
             <div class="fotografo-thumb">
